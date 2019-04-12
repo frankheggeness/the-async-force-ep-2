@@ -1,6 +1,7 @@
 requestResourceButton.addEventListener('click', dataMaker);
 
 function dataMaker() {
+  contentContainer.innerHTML = ' ';
   if (resourceType.value === 'people') {
     const personReq = new XMLHttpRequest();
 
