@@ -48,19 +48,19 @@ function dataMaker() {
   // planet below
 
   if (resourceType.value === 'planets') {
-    if (this.status !== 200) {
-      let errorBox = document.createElement('h2');
-      errorBox.innerHTML = 'OOPSIE WOOPSIE WE HAVE AN ERROR: ' + this.status;
-      if (this.status === 404) {
-        let notFound = document.createElement('h3');
-        notFound.innerHTML = 'Brah type in a real ID';
-        errorBox.appendChild(notFound);
-      }
-      contentContainer.appendChild(errorBox);
-    }
     const planetReq = new XMLHttpRequest();
 
     function planetReqListener() {
+      if (this.status !== 200) {
+        let errorBox = document.createElement('h2');
+        errorBox.innerHTML = 'OOPSIE WOOPSIE WE HAVE AN ERROR: ' + this.status;
+        if (this.status === 404) {
+          let notFound = document.createElement('h3');
+          notFound.innerHTML = 'Brah type in a real ID';
+          errorBox.appendChild(notFound);
+        }
+        contentContainer.appendChild(errorBox);
+      }
       let responseData = JSON.parse(this.responseText);
       console.log(responseData);
 
@@ -105,20 +105,19 @@ function dataMaker() {
   // starship below
 
   if (resourceType.value === 'starships') {
-    if (this.status !== 200) {
-      let errorBox = document.createElement('h2');
-      errorBox.innerHTML = 'OOPSIE WOOPSIE WE HAVE AN ERROR: ' + this.status;
-      if (this.status === 404) {
-        let notFound = document.createElement('h3');
-        notFound.innerHTML = 'Brah type in a real ID';
-        errorBox.appendChild(notFound);
-      }
-      contentContainer.appendChild(errorBox);
-    }
-
     const starshipReq = new XMLHttpRequest();
 
     function starshipReqListener() {
+      if (this.status !== 200) {
+        let errorBox = document.createElement('h2');
+        errorBox.innerHTML = 'OOPSIE WOOPSIE WE HAVE AN ERROR: ' + this.status;
+        if (this.status === 404) {
+          let notFound = document.createElement('h3');
+          notFound.innerHTML = 'Brah type in a real ID';
+          errorBox.appendChild(notFound);
+        }
+        contentContainer.appendChild(errorBox);
+      }
       let responseData = JSON.parse(this.responseText);
       console.log(responseData);
 
